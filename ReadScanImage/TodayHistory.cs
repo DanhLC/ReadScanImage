@@ -12,6 +12,10 @@
 			await LoadLogToHistory();
 		}
 
+		/// <summary>
+		/// Load data from today's history log file (.txt)
+		/// </summary>
+		/// <returns></returns>
 		private async Task LoadLogToHistory()
 		{
 			try
@@ -32,12 +36,22 @@
 			}
 		}
 
+		/// <summary>
+		/// Copy text from text box
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void btnCopyText_Click(object sender, EventArgs e)
 		{
 			Clipboard.SetText(tbHistory.Text);
 			MessageBox.Show(this, "Copied", "Notify", MessageBoxButtons.OK, MessageBoxIcon.Information);
 		}
 
+		/// <summary>
+		/// Clear data from today's history log file (.txt)
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void btnClear_Click(object sender, EventArgs e)
 		{
 			var result = MessageBox.Show("Are you sure you want to clear today's history?", "Confirm Clear", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

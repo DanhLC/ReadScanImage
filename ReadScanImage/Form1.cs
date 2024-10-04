@@ -12,6 +12,11 @@ namespace ReadScanImage
 			_cglobalService = cglobalService;
 		}
 
+		/// <summary>
+		/// Button choose image on click
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private async void btnChooseImage_Click(object sender, EventArgs e)
 		{
 			using (OpenFileDialog openFileDialog = new OpenFileDialog())
@@ -42,6 +47,11 @@ namespace ReadScanImage
 			}
 		}
 
+		/// <summary>
+		/// Extract text from image and write log history
+		/// </summary>
+		/// <param name="imagePath"></param>
+		/// <returns></returns>
 		private async Task ExtractTextFromImage(string imagePath)
 		{
 			try
@@ -82,18 +92,33 @@ namespace ReadScanImage
 			}
 		}
 
+		/// <summary>
+		/// Copy text from text box
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void btnCopyText_Click(object sender, EventArgs e)
 		{
 			Clipboard.SetText(tbPlainText.Text);
 			MessageBox.Show(this, "Copied", "Notify", MessageBoxButtons.OK, MessageBoxIcon.Information);
 		}
 
+		/// <summary>
+		/// Clear text from text box
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void btnClear_Click(object sender, EventArgs e)
 		{
 			tbPlainText.Text = string.Empty;
 			MessageBox.Show(this, "Cleared successfully", "Notify", MessageBoxButtons.OK, MessageBoxIcon.Information);
 		}
 
+		/// <summary>
+		/// Call pop up today's history log
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void btnHistoryLog_Click(object sender, EventArgs e)
 		{
 			var todayHistory = new TodayHistory();
