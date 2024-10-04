@@ -27,7 +27,7 @@
 				if (File.Exists(logFilePath))
 				{
 					string logContent = File.ReadAllText(logFilePath);
-					tbHistory.Text = logContent;
+					rtbHistory.Text = logContent;
 				}
 			}
 			catch (Exception ex)
@@ -43,7 +43,7 @@
 		/// <param name="e"></param>
 		private void btnCopyText_Click(object sender, EventArgs e)
 		{
-			Clipboard.SetText(tbHistory.Text);
+			Clipboard.SetText(rtbHistory.Text);
 			MessageBox.Show(this, "Copied", "Notify", MessageBoxButtons.OK, MessageBoxIcon.Information);
 		}
 
@@ -67,7 +67,7 @@
 					if (File.Exists(logFilePath))
 					{
 						File.WriteAllText(logFilePath, string.Empty);
-						tbHistory.Text = string.Empty;
+						rtbHistory.Text = string.Empty;
 					}
 
 					MessageBox.Show("Cleared today's history successfully");

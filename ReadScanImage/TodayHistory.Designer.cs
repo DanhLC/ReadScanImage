@@ -33,7 +33,7 @@
 			this.btnClear = new System.Windows.Forms.Button();
 			this.btnCopyText = new System.Windows.Forms.Button();
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.tbHistory = new System.Windows.Forms.TextBox();
+			this.rtbHistory = new System.Windows.Forms.RichTextBox();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			this.SuspendLayout();
@@ -80,23 +80,21 @@
 			// 
 			// panel2
 			// 
-			this.panel2.Controls.Add(this.tbHistory);
+			this.panel2.Controls.Add(this.rtbHistory);
 			this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel2.Location = new System.Drawing.Point(0, 45);
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(800, 375);
 			this.panel2.TabIndex = 2;
 			// 
-			// tbHistory
+			// rtbHistory
 			// 
-			this.tbHistory.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tbHistory.Location = new System.Drawing.Point(0, 0);
-			this.tbHistory.Multiline = true;
-			this.tbHistory.Name = "tbHistory";
-			this.tbHistory.ReadOnly = true;
-			this.tbHistory.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.tbHistory.Size = new System.Drawing.Size(800, 375);
-			this.tbHistory.TabIndex = 0;
+			this.rtbHistory.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.rtbHistory.Location = new System.Drawing.Point(0, 0);
+			this.rtbHistory.Name = "rtbHistory";
+			this.rtbHistory.Size = new System.Drawing.Size(800, 375);
+			this.rtbHistory.TabIndex = 0;
+			this.rtbHistory.Text = "";
 			// 
 			// TodayHistory
 			// 
@@ -114,7 +112,6 @@
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
 			this.panel2.ResumeLayout(false);
-			this.panel2.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -124,7 +121,7 @@
 		private Panel panel1;
 		private Button btnCopyText;
 		private Panel panel2;
-		private TextBox tbHistory;
 		private Button btnClear;
+		private RichTextBox rtbHistory;
 	}
 }

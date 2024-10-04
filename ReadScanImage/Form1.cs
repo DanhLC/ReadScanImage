@@ -31,7 +31,7 @@ namespace ReadScanImage
 
 					pbLoading.Style = ProgressBarStyle.Marquee;
 					pbLoading.Visible = true;
-					tbPlainText.Enabled = btnChooseImage.Enabled = btnClear.Enabled = btnCopyText.Enabled = btnHistoryLog.Enabled =  false;
+					rtbPlainText.Enabled = btnChooseImage.Enabled = btnClear.Enabled = btnCopyText.Enabled = btnHistoryLog.Enabled =  false;
 
 					#endregion
 
@@ -40,7 +40,7 @@ namespace ReadScanImage
 					#region Enable & hide loading
 
 					pbLoading.Visible = false;
-					tbPlainText.Enabled = btnChooseImage.Enabled = btnClear.Enabled = btnCopyText.Enabled = btnHistoryLog.Enabled = true;
+					rtbPlainText.Enabled = btnChooseImage.Enabled = btnClear.Enabled = btnCopyText.Enabled = btnHistoryLog.Enabled = true;
 
 					#endregion
 				}
@@ -82,7 +82,7 @@ namespace ReadScanImage
 					}
 				});
 
-				tbPlainText.Text = text;
+				rtbPlainText.Text = text;
 				MessageBox.Show("Text has been successfully extracted from the image.");
 			}
 			catch (Exception ex)
@@ -99,7 +99,7 @@ namespace ReadScanImage
 		/// <param name="e"></param>
 		private void btnCopyText_Click(object sender, EventArgs e)
 		{
-			Clipboard.SetText(tbPlainText.Text);
+			Clipboard.SetText(rtbPlainText.Text);
 			MessageBox.Show(this, "Copied", "Notify", MessageBoxButtons.OK, MessageBoxIcon.Information);
 		}
 
@@ -110,7 +110,7 @@ namespace ReadScanImage
 		/// <param name="e"></param>
 		private void btnClear_Click(object sender, EventArgs e)
 		{
-			tbPlainText.Text = string.Empty;
+			rtbPlainText.Text = string.Empty;
 			MessageBox.Show(this, "Cleared successfully", "Notify", MessageBoxButtons.OK, MessageBoxIcon.Information);
 		}
 

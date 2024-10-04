@@ -36,7 +36,7 @@
 			this.btnCopyText = new System.Windows.Forms.Button();
 			this.btnChooseImage = new System.Windows.Forms.Button();
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.tbPlainText = new System.Windows.Forms.TextBox();
+			this.rtbPlainText = new System.Windows.Forms.RichTextBox();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			this.SuspendLayout();
@@ -125,22 +125,20 @@
 			// 
 			// panel2
 			// 
-			this.panel2.Controls.Add(this.tbPlainText);
-			this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel2.Controls.Add(this.rtbPlainText);
 			this.panel2.Location = new System.Drawing.Point(0, 44);
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(800, 376);
 			this.panel2.TabIndex = 1;
 			// 
-			// tbPlainText
+			// rtbPlainText
 			// 
-			this.tbPlainText.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tbPlainText.Location = new System.Drawing.Point(0, 0);
-			this.tbPlainText.Multiline = true;
-			this.tbPlainText.Name = "tbPlainText";
-			this.tbPlainText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.tbPlainText.Size = new System.Drawing.Size(800, 376);
-			this.tbPlainText.TabIndex = 0;
+			this.rtbPlainText.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.rtbPlainText.Location = new System.Drawing.Point(0, 0);
+			this.rtbPlainText.Name = "rtbPlainText";
+			this.rtbPlainText.Size = new System.Drawing.Size(800, 376);
+			this.rtbPlainText.TabIndex = 0;
+			this.rtbPlainText.Text = "";
 			// 
 			// Form1
 			// 
@@ -157,7 +155,6 @@
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
 			this.panel2.ResumeLayout(false);
-			this.panel2.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -168,9 +165,9 @@
 		private Button btnChooseImage;
 		private Button btnCopyText;
 		private Panel panel2;
-		private TextBox tbPlainText;
 		private Button btnClear;
 		private Button btnHistoryLog;
 		private ProgressBar pbLoading;
+		private RichTextBox rtbPlainText;
 	}
 }
