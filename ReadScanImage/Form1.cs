@@ -73,7 +73,6 @@ namespace ReadScanImage
 				});
 
 				tbPlainText.Text = text;
-
 				MessageBox.Show("Text has been successfully extracted from the image.");
 			}
 			catch (Exception ex)
