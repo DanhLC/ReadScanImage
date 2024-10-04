@@ -28,18 +28,23 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.pbLoading = new System.Windows.Forms.ProgressBar();
+			this.btnHistoryLog = new System.Windows.Forms.Button();
+			this.btnClear = new System.Windows.Forms.Button();
 			this.btnCopyText = new System.Windows.Forms.Button();
 			this.btnChooseImage = new System.Windows.Forms.Button();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.tbPlainText = new System.Windows.Forms.TextBox();
-			this.btnClear = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panel1
 			// 
+			this.panel1.Controls.Add(this.pbLoading);
+			this.panel1.Controls.Add(this.btnHistoryLog);
 			this.panel1.Controls.Add(this.btnClear);
 			this.panel1.Controls.Add(this.btnCopyText);
 			this.panel1.Controls.Add(this.btnChooseImage);
@@ -49,6 +54,43 @@
 			this.panel1.Size = new System.Drawing.Size(800, 44);
 			this.panel1.TabIndex = 0;
 			// 
+			// pbLoading
+			// 
+			this.pbLoading.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.pbLoading.Location = new System.Drawing.Point(601, 11);
+			this.pbLoading.Name = "pbLoading";
+			this.pbLoading.Size = new System.Drawing.Size(187, 23);
+			this.pbLoading.TabIndex = 4;
+			// 
+			// btnHistoryLog
+			// 
+			this.btnHistoryLog.AutoSize = true;
+			this.btnHistoryLog.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.btnHistoryLog.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+			this.btnHistoryLog.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.btnHistoryLog.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.btnHistoryLog.Location = new System.Drawing.Point(301, 11);
+			this.btnHistoryLog.Name = "btnHistoryLog";
+			this.btnHistoryLog.Size = new System.Drawing.Size(101, 24);
+			this.btnHistoryLog.TabIndex = 3;
+			this.btnHistoryLog.Text = "Today history";
+			this.btnHistoryLog.UseVisualStyleBackColor = false;
+			// 
+			// btnClear
+			// 
+			this.btnClear.AutoSize = true;
+			this.btnClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.btnClear.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+			this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.btnClear.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.btnClear.Location = new System.Drawing.Point(218, 11);
+			this.btnClear.Name = "btnClear";
+			this.btnClear.Size = new System.Drawing.Size(77, 24);
+			this.btnClear.TabIndex = 2;
+			this.btnClear.Text = "Clear text";
+			this.btnClear.UseVisualStyleBackColor = false;
+			this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+			// 
 			// btnCopyText
 			// 
 			this.btnCopyText.AutoSize = true;
@@ -56,7 +98,7 @@
 			this.btnCopyText.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
 			this.btnCopyText.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnCopyText.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.btnCopyText.Location = new System.Drawing.Point(134, 12);
+			this.btnCopyText.Location = new System.Drawing.Point(134, 11);
 			this.btnCopyText.Name = "btnCopyText";
 			this.btnCopyText.Size = new System.Drawing.Size(78, 24);
 			this.btnCopyText.TabIndex = 1;
@@ -94,23 +136,9 @@
 			this.tbPlainText.Location = new System.Drawing.Point(0, 0);
 			this.tbPlainText.Multiline = true;
 			this.tbPlainText.Name = "tbPlainText";
+			this.tbPlainText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
 			this.tbPlainText.Size = new System.Drawing.Size(800, 376);
 			this.tbPlainText.TabIndex = 0;
-			// 
-			// btnClear
-			// 
-			this.btnClear.AutoSize = true;
-			this.btnClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.btnClear.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-			this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.btnClear.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.btnClear.Location = new System.Drawing.Point(218, 12);
-			this.btnClear.Name = "btnClear";
-			this.btnClear.Size = new System.Drawing.Size(77, 24);
-			this.btnClear.TabIndex = 2;
-			this.btnClear.Text = "Clear text";
-			this.btnClear.UseVisualStyleBackColor = false;
-			this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
 			// 
 			// Form1
 			// 
@@ -120,6 +148,7 @@
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.panel1);
 			this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "Form1";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Read Scan Image";
@@ -139,5 +168,7 @@
 		private Panel panel2;
 		private TextBox tbPlainText;
 		private Button btnClear;
+		private Button btnHistoryLog;
+		private ProgressBar pbLoading;
 	}
 }
