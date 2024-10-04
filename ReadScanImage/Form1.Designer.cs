@@ -61,6 +61,7 @@
 			this.pbLoading.Name = "pbLoading";
 			this.pbLoading.Size = new System.Drawing.Size(187, 23);
 			this.pbLoading.TabIndex = 4;
+			this.pbLoading.Visible = false;
 			// 
 			// btnHistoryLog
 			// 
