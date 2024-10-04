@@ -30,6 +30,7 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.cbLanguages = new System.Windows.Forms.ComboBox();
 			this.pbLoading = new System.Windows.Forms.ProgressBar();
 			this.btnHistoryLog = new System.Windows.Forms.Button();
 			this.btnClear = new System.Windows.Forms.Button();
@@ -43,6 +44,7 @@
 			// 
 			// panel1
 			// 
+			this.panel1.Controls.Add(this.cbLanguages);
 			this.panel1.Controls.Add(this.pbLoading);
 			this.panel1.Controls.Add(this.btnHistoryLog);
 			this.panel1.Controls.Add(this.btnClear);
@@ -53,6 +55,14 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(800, 44);
 			this.panel1.TabIndex = 0;
+			// 
+			// cbLanguages
+			// 
+			this.cbLanguages.FormattingEnabled = true;
+			this.cbLanguages.Location = new System.Drawing.Point(417, 11);
+			this.cbLanguages.Name = "cbLanguages";
+			this.cbLanguages.Size = new System.Drawing.Size(121, 22);
+			this.cbLanguages.TabIndex = 5;
 			// 
 			// pbLoading
 			// 
@@ -152,6 +162,7 @@
 			this.Name = "Form1";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Read Scan Image";
+			this.Load += new System.EventHandler(this.Form1_Load);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
 			this.panel2.ResumeLayout(false);
@@ -169,5 +180,6 @@
 		private Button btnHistoryLog;
 		private ProgressBar pbLoading;
 		private RichTextBox rtbPlainText;
+		private ComboBox cbLanguages;
 	}
 }

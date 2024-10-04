@@ -12,6 +12,15 @@ namespace ReadScanImage
 			_cglobalService = cglobalService;
 		}
 
+		private void Form1_Load(object sender, EventArgs e)
+		{
+			var languages = new string[] { "English", "Vietnamese", "Japanese" };
+			cbLanguages.Items.AddRange(languages);
+			cbLanguages.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+			cbLanguages.AutoCompleteSource = AutoCompleteSource.ListItems;
+			cbLanguages.SelectedIndex = 0;
+		}
+
 		/// <summary>
 		/// Button choose image on click
 		/// </summary>
@@ -31,7 +40,7 @@ namespace ReadScanImage
 
 					pbLoading.Style = ProgressBarStyle.Marquee;
 					pbLoading.Visible = true;
-					rtbPlainText.Enabled = btnChooseImage.Enabled = btnClear.Enabled = btnCopyText.Enabled = btnHistoryLog.Enabled =  false;
+					rtbPlainText.Enabled = btnChooseImage.Enabled = btnClear.Enabled = btnCopyText.Enabled = btnHistoryLog.Enabled = cbLanguages.Enabled =  false;
 
 					#endregion
 
@@ -40,7 +49,7 @@ namespace ReadScanImage
 					#region Enable & hide loading
 
 					pbLoading.Visible = false;
-					rtbPlainText.Enabled = btnChooseImage.Enabled = btnClear.Enabled = btnCopyText.Enabled = btnHistoryLog.Enabled = true;
+					rtbPlainText.Enabled = btnChooseImage.Enabled = btnClear.Enabled = btnCopyText.Enabled = btnHistoryLog.Enabled = cbLanguages.Enabled = true;
 
 					#endregion
 				}
@@ -58,10 +67,13 @@ namespace ReadScanImage
 			{
 				// Library: --https://tesseract-ocr.github.io/tessdoc/Data-Files, add more to tessdata
 				var tessdataPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "tessdata");
+				var language = cbLanguages.SelectedItem.ToString();
+				var selectedLanguage = language.ToLower() == "vietnamese" ? "vie"
+					: language.ToLower() == "english" ? "eng" : "jpn";
 
 				var text = await Task.Run(() =>
 				{
-					using (var engine = new TesseractEngine(tessdataPath, "eng", EngineMode.Default))
+					using (var engine = new TesseractEngine(tessdataPath, selectedLanguage, EngineMode.Default))
 					{
 						using (var img = Pix.LoadFromFile(imagePath))
 						{
@@ -72,7 +84,7 @@ namespace ReadScanImage
 								try
 								{
 									var fileName = Path.GetFileName(imagePath);
-									var message = string.Format("Action: Extract text to image,{0}File name: {1} ", Environment.NewLine, fileName);
+									var message = string.Format("Action: Extract text to image,{0}File name: {1},{0}Language: {2} ", Environment.NewLine, fileName, language);
 									_cglobalService.WriteHistoryLog("Log", "HistoryLog", message, plainText);
 								}
 								catch { }
