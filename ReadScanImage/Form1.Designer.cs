@@ -75,6 +75,7 @@
 			this.btnHistoryLog.TabIndex = 3;
 			this.btnHistoryLog.Text = "Today history";
 			this.btnHistoryLog.UseVisualStyleBackColor = false;
+			this.btnHistoryLog.Click += new System.EventHandler(this.btnHistoryLog_Click);
 			// 
 			// btnClear
 			// 

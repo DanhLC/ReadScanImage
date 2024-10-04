@@ -1,13 +1,15 @@
 using Tesseract;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace ReadScanImage
 {
 	public partial class Form1 : Form
 	{
-		public Form1()
+		private readonly ICGlobalService _cglobalService;
+
+		public Form1(ICGlobalService cglobalService)
 		{
 			InitializeComponent();
+			_cglobalService = cglobalService;
 		}
 
 		private async void btnChooseImage_Click(object sender, EventArgs e)
@@ -60,7 +62,7 @@ namespace ReadScanImage
 								{
 									var fileName = Path.GetFileName(imagePath);
 									var message = string.Format("Action: Extract text to image,{0}File name: {1} ", Environment.NewLine, fileName);
-									WriteHistoryLog("Log", "HistoryLog", message, plainText);
+									_cglobalService.WriteHistoryLog("Log", "HistoryLog", message, plainText);
 								}
 								catch { }
 
@@ -74,7 +76,8 @@ namespace ReadScanImage
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show("Error: " + ex.Message);
+				_cglobalService.WriteErrorLog(ex);
+				MessageBox.Show(ex.Message);
 			}
 		}
 
@@ -90,23 +93,10 @@ namespace ReadScanImage
 			MessageBox.Show(this, "Clear successed", "Notify", MessageBoxButtons.OK, MessageBoxIcon.Information);
 		}
 
-		public void WriteHistoryLog(string folderName, string fileName, string action, string value)
+		private void btnHistoryLog_Click(object sender, EventArgs e)
 		{
-			var baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-			var folderPath = Path.Combine(baseDirectory, folderName);
-			var dateSuffix = DateTime.Now.ToString("ddMMyyyy");
-			var logFileName = string.Format("{0}_{1}.txt", fileName, dateSuffix);
-			var logFilePath = Path.Combine(folderPath, logFileName);
-			var logEntry = string.Format("[{0}{1}Action Date: {2:dd/MM/yyyy HH:mm:ss.fff}]", action, Environment.NewLine, DateTime.Now);
-			logEntry += Environment.NewLine + value + Environment.NewLine;
-
-			try
-			{
-				if (!Directory.Exists(folderPath)) Directory.CreateDirectory(folderPath);
-
-				File.AppendAllText(logFilePath, logEntry);
-			}
-			catch { }
+			var todayHistory = new TodayHistory();
+			todayHistory.ShowDialog();
 		}
 	}
 }
