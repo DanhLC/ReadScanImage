@@ -72,9 +72,9 @@
 			this.btnHistoryLog.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
 			this.btnHistoryLog.Location = new System.Drawing.Point(301, 11);
 			this.btnHistoryLog.Name = "btnHistoryLog";
-			this.btnHistoryLog.Size = new System.Drawing.Size(101, 24);
+			this.btnHistoryLog.Size = new System.Drawing.Size(110, 24);
 			this.btnHistoryLog.TabIndex = 3;
-			this.btnHistoryLog.Text = "Today history";
+			this.btnHistoryLog.Text = "Today\'s history";
 			this.btnHistoryLog.UseVisualStyleBackColor = false;
 			this.btnHistoryLog.Click += new System.EventHandler(this.btnHistoryLog_Click);
 			// 

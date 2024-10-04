@@ -73,6 +73,8 @@ namespace ReadScanImage
 				});
 
 				tbPlainText.Text = text;
+
+				MessageBox.Show("Text has been successfully extracted from the image.");
 			}
 			catch (Exception ex)
 			{
@@ -90,7 +92,7 @@ namespace ReadScanImage
 		private void btnClear_Click(object sender, EventArgs e)
 		{
 			tbPlainText.Text = string.Empty;
-			MessageBox.Show(this, "Clear successed", "Notify", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			MessageBox.Show(this, "Cleared successfully", "Notify", MessageBoxButtons.OK, MessageBoxIcon.Information);
 		}
 
 		private void btnHistoryLog_Click(object sender, EventArgs e)
