@@ -56,6 +56,7 @@ namespace ReadScanImage
 		{
 			try
 			{
+				// Library: --https://tesseract-ocr.github.io/tessdoc/Data-Files, add more to tessdata
 				var tessdataPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "tessdata");
 
 				var text = await Task.Run(() =>
