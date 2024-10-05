@@ -68,7 +68,7 @@ namespace ReadScanImage
 				// Library: --https://tesseract-ocr.github.io/tessdoc/Data-Files, add more to tessdata
 				var tessdataPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "tessdata");
 				var language = cbLanguages.SelectedItem.ToString();
-				var selectedLanguage = language.ToLower() == "english" ? "eng" : "jpn";
+				var selectedLanguage = language.ToLower() == "japanese" ? "jpn" : "eng";
 
 				var text = await Task.Run(() =>
 				{
