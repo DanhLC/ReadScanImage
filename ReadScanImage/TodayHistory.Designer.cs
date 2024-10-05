@@ -134,7 +134,7 @@
 			Icon = (Icon)resources.GetObject("$this.Icon");
 			Name = "TodayHistory";
 			StartPosition = FormStartPosition.CenterScreen;
-			Text = "Today History";
+			Text = "Today's History";
 			Load += TodayHistory_Load;
 			panel1.ResumeLayout(false);
 			panel1.PerformLayout();

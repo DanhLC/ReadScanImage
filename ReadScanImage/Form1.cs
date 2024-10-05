@@ -6,10 +6,10 @@ namespace ReadScanImage
 	{
 		private readonly ICGlobalService _cglobalService;
 
-		public Form1(ICGlobalService cglobalService)
+		public Form1()
 		{
 			InitializeComponent();
-			_cglobalService = cglobalService;
+			_cglobalService = new CGlobal();
 		}
 
 		private void Form1_Load(object sender, EventArgs e)
@@ -67,7 +67,7 @@ namespace ReadScanImage
 			{
 				// Library: --https://tesseract-ocr.github.io/tessdoc/Data-Files, add more to tessdata
 				var tessdataPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "tessdata");
-				var language = cbLanguages.SelectedItem.ToString();
+				var language = cbLanguages.SelectedItem?.ToString() ?? "eng";
 				var selectedLanguage = language.ToLower() == "japanese" ? "jpn" : "eng";
 
 				var text = await Task.Run(() =>
@@ -86,7 +86,9 @@ namespace ReadScanImage
 									var message = string.Format("Action: Extract text to image,{0}File name: {1},{0}Language: {2} ", Environment.NewLine, fileName, language);
 									_cglobalService.WriteHistoryLog("Log", "HistoryLog", message, plainText);
 								}
-								catch { }
+								catch
+								{
+								}
 
 								return plainText;
 							}
