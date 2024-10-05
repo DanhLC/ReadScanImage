@@ -29,157 +29,236 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-			this.panel1 = new System.Windows.Forms.Panel();
-			this.cbLanguages = new System.Windows.Forms.ComboBox();
-			this.pbLoading = new System.Windows.Forms.ProgressBar();
-			this.btnHistoryLog = new System.Windows.Forms.Button();
-			this.btnClear = new System.Windows.Forms.Button();
-			this.btnCopyText = new System.Windows.Forms.Button();
-			this.btnChooseImage = new System.Windows.Forms.Button();
-			this.panel2 = new System.Windows.Forms.Panel();
-			this.rtbPlainText = new System.Windows.Forms.RichTextBox();
-			this.panel1.SuspendLayout();
-			this.panel2.SuspendLayout();
-			this.SuspendLayout();
+			panel1 = new Panel();
+			panel7 = new Panel();
+			cbLanguages = new ComboBox();
+			panel6 = new Panel();
+			btnHistoryLog = new Button();
+			panel5 = new Panel();
+			btnClear = new Button();
+			panel4 = new Panel();
+			btnCopyText = new Button();
+			panel3 = new Panel();
+			btnChooseImage = new Button();
+			pbLoading = new ProgressBar();
+			panel2 = new Panel();
+			rtbPlainText = new RichTextBox();
+			panel1.SuspendLayout();
+			panel7.SuspendLayout();
+			panel6.SuspendLayout();
+			panel5.SuspendLayout();
+			panel4.SuspendLayout();
+			panel3.SuspendLayout();
+			panel2.SuspendLayout();
+			SuspendLayout();
 			// 
 			// panel1
 			// 
-			this.panel1.Controls.Add(this.cbLanguages);
-			this.panel1.Controls.Add(this.pbLoading);
-			this.panel1.Controls.Add(this.btnHistoryLog);
-			this.panel1.Controls.Add(this.btnClear);
-			this.panel1.Controls.Add(this.btnCopyText);
-			this.panel1.Controls.Add(this.btnChooseImage);
-			this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panel1.Location = new System.Drawing.Point(0, 0);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(800, 44);
-			this.panel1.TabIndex = 0;
+			panel1.Controls.Add(panel7);
+			panel1.Controls.Add(panel6);
+			panel1.Controls.Add(panel5);
+			panel1.Controls.Add(panel4);
+			panel1.Controls.Add(panel3);
+			panel1.Controls.Add(pbLoading);
+			panel1.Dock = DockStyle.Top;
+			panel1.Location = new Point(0, 0);
+			panel1.Name = "panel1";
+			panel1.Size = new Size(831, 44);
+			panel1.TabIndex = 0;
+			// 
+			// panel7
+			// 
+			panel7.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+			panel7.Controls.Add(cbLanguages);
+			panel7.Dock = DockStyle.Left;
+			panel7.Location = new Point(414, 0);
+			panel7.Name = "panel7";
+			panel7.Size = new Size(133, 44);
+			panel7.TabIndex = 10;
 			// 
 			// cbLanguages
 			// 
-			this.cbLanguages.FormattingEnabled = true;
-			this.cbLanguages.Location = new System.Drawing.Point(417, 11);
-			this.cbLanguages.Name = "cbLanguages";
-			this.cbLanguages.Size = new System.Drawing.Size(121, 22);
-			this.cbLanguages.TabIndex = 5;
+			cbLanguages.FormattingEnabled = true;
+			cbLanguages.Location = new Point(6, 12);
+			cbLanguages.Name = "cbLanguages";
+			cbLanguages.Size = new Size(121, 22);
+			cbLanguages.TabIndex = 5;
 			// 
-			// pbLoading
+			// panel6
 			// 
-			this.pbLoading.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.pbLoading.Location = new System.Drawing.Point(601, 11);
-			this.pbLoading.Name = "pbLoading";
-			this.pbLoading.Size = new System.Drawing.Size(187, 23);
-			this.pbLoading.TabIndex = 4;
-			this.pbLoading.Visible = false;
+			panel6.AutoSize = true;
+			panel6.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+			panel6.Controls.Add(btnHistoryLog);
+			panel6.Dock = DockStyle.Left;
+			panel6.Location = new Point(295, 0);
+			panel6.Name = "panel6";
+			panel6.Size = new Size(119, 44);
+			panel6.TabIndex = 9;
 			// 
 			// btnHistoryLog
 			// 
-			this.btnHistoryLog.AutoSize = true;
-			this.btnHistoryLog.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.btnHistoryLog.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-			this.btnHistoryLog.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.btnHistoryLog.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.btnHistoryLog.Location = new System.Drawing.Point(301, 11);
-			this.btnHistoryLog.Name = "btnHistoryLog";
-			this.btnHistoryLog.Size = new System.Drawing.Size(110, 24);
-			this.btnHistoryLog.TabIndex = 3;
-			this.btnHistoryLog.Text = "Today\'s history";
-			this.btnHistoryLog.UseVisualStyleBackColor = false;
-			this.btnHistoryLog.Click += new System.EventHandler(this.btnHistoryLog_Click);
+			btnHistoryLog.AutoSize = true;
+			btnHistoryLog.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+			btnHistoryLog.BackColor = SystemColors.GradientInactiveCaption;
+			btnHistoryLog.FlatStyle = FlatStyle.Popup;
+			btnHistoryLog.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+			btnHistoryLog.Location = new Point(6, 10);
+			btnHistoryLog.Name = "btnHistoryLog";
+			btnHistoryLog.Size = new Size(110, 24);
+			btnHistoryLog.TabIndex = 3;
+			btnHistoryLog.Text = "Today's history";
+			btnHistoryLog.UseVisualStyleBackColor = false;
+			btnHistoryLog.Click += btnHistoryLog_Click;
+			// 
+			// panel5
+			// 
+			panel5.AutoSize = true;
+			panel5.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+			panel5.Controls.Add(btnClear);
+			panel5.Dock = DockStyle.Left;
+			panel5.Location = new Point(215, 0);
+			panel5.Name = "panel5";
+			panel5.Size = new Size(80, 44);
+			panel5.TabIndex = 8;
 			// 
 			// btnClear
 			// 
-			this.btnClear.AutoSize = true;
-			this.btnClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.btnClear.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-			this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.btnClear.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.btnClear.Location = new System.Drawing.Point(218, 11);
-			this.btnClear.Name = "btnClear";
-			this.btnClear.Size = new System.Drawing.Size(77, 24);
-			this.btnClear.TabIndex = 2;
-			this.btnClear.Text = "Clear text";
-			this.btnClear.UseVisualStyleBackColor = false;
-			this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+			btnClear.AutoSize = true;
+			btnClear.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+			btnClear.BackColor = SystemColors.GradientInactiveCaption;
+			btnClear.FlatStyle = FlatStyle.Popup;
+			btnClear.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+			btnClear.Location = new Point(0, 10);
+			btnClear.Name = "btnClear";
+			btnClear.Size = new Size(77, 24);
+			btnClear.TabIndex = 3;
+			btnClear.Text = "Clear text";
+			btnClear.UseVisualStyleBackColor = false;
+			btnClear.Click += btnClear_Click;
+			// 
+			// panel4
+			// 
+			panel4.AutoSize = true;
+			panel4.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+			panel4.Controls.Add(btnCopyText);
+			panel4.Dock = DockStyle.Left;
+			panel4.Location = new Point(131, 0);
+			panel4.Name = "panel4";
+			panel4.Size = new Size(84, 44);
+			panel4.TabIndex = 7;
 			// 
 			// btnCopyText
 			// 
-			this.btnCopyText.AutoSize = true;
-			this.btnCopyText.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.btnCopyText.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-			this.btnCopyText.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.btnCopyText.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.btnCopyText.Location = new System.Drawing.Point(134, 11);
-			this.btnCopyText.Name = "btnCopyText";
-			this.btnCopyText.Size = new System.Drawing.Size(78, 24);
-			this.btnCopyText.TabIndex = 1;
-			this.btnCopyText.Text = "Copy text";
-			this.btnCopyText.UseVisualStyleBackColor = false;
-			this.btnCopyText.Click += new System.EventHandler(this.btnCopyText_Click);
+			btnCopyText.AutoSize = true;
+			btnCopyText.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+			btnCopyText.BackColor = SystemColors.GradientInactiveCaption;
+			btnCopyText.FlatStyle = FlatStyle.Popup;
+			btnCopyText.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+			btnCopyText.Location = new Point(3, 10);
+			btnCopyText.Name = "btnCopyText";
+			btnCopyText.Size = new Size(78, 24);
+			btnCopyText.TabIndex = 2;
+			btnCopyText.Text = "Copy text";
+			btnCopyText.UseVisualStyleBackColor = false;
+			btnCopyText.Click += btnCopyText_Click;
+			// 
+			// panel3
+			// 
+			panel3.AutoSize = true;
+			panel3.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+			panel3.Controls.Add(btnChooseImage);
+			panel3.Dock = DockStyle.Left;
+			panel3.Location = new Point(0, 0);
+			panel3.Name = "panel3";
+			panel3.Size = new Size(131, 44);
+			panel3.TabIndex = 6;
 			// 
 			// btnChooseImage
 			// 
-			this.btnChooseImage.AutoSize = true;
-			this.btnChooseImage.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.btnChooseImage.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-			this.btnChooseImage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.btnChooseImage.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.btnChooseImage.Location = new System.Drawing.Point(12, 11);
-			this.btnChooseImage.Name = "btnChooseImage";
-			this.btnChooseImage.Size = new System.Drawing.Size(116, 24);
-			this.btnChooseImage.TabIndex = 0;
-			this.btnChooseImage.Text = "Choose Image...";
-			this.btnChooseImage.UseVisualStyleBackColor = false;
-			this.btnChooseImage.Click += new System.EventHandler(this.btnChooseImage_Click);
+			btnChooseImage.AutoSize = true;
+			btnChooseImage.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+			btnChooseImage.BackColor = SystemColors.GradientInactiveCaption;
+			btnChooseImage.FlatStyle = FlatStyle.Popup;
+			btnChooseImage.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+			btnChooseImage.Location = new Point(12, 10);
+			btnChooseImage.Name = "btnChooseImage";
+			btnChooseImage.Size = new Size(116, 24);
+			btnChooseImage.TabIndex = 0;
+			btnChooseImage.Text = "Choose Image...";
+			btnChooseImage.UseVisualStyleBackColor = false;
+			btnChooseImage.Click += btnChooseImage_Click;
+			// 
+			// pbLoading
+			// 
+			pbLoading.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+			pbLoading.Location = new Point(632, 11);
+			pbLoading.Name = "pbLoading";
+			pbLoading.Size = new Size(187, 23);
+			pbLoading.TabIndex = 4;
+			pbLoading.Visible = false;
 			// 
 			// panel2
 			// 
-			this.panel2.Controls.Add(this.rtbPlainText);
-			this.panel2.Location = new System.Drawing.Point(0, 44);
-			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(800, 376);
-			this.panel2.TabIndex = 1;
+			panel2.Controls.Add(rtbPlainText);
+			panel2.Dock = DockStyle.Fill;
+			panel2.Location = new Point(0, 44);
+			panel2.Name = "panel2";
+			panel2.Size = new Size(831, 514);
+			panel2.TabIndex = 1;
 			// 
 			// rtbPlainText
 			// 
-			this.rtbPlainText.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.rtbPlainText.Location = new System.Drawing.Point(0, 0);
-			this.rtbPlainText.Name = "rtbPlainText";
-			this.rtbPlainText.Size = new System.Drawing.Size(800, 376);
-			this.rtbPlainText.TabIndex = 0;
-			this.rtbPlainText.Text = "";
+			rtbPlainText.Dock = DockStyle.Fill;
+			rtbPlainText.Location = new Point(0, 0);
+			rtbPlainText.Name = "rtbPlainText";
+			rtbPlainText.Size = new Size(831, 514);
+			rtbPlainText.TabIndex = 0;
+			rtbPlainText.Text = "";
 			// 
 			// Form1
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 420);
-			this.Controls.Add(this.panel2);
-			this.Controls.Add(this.panel1);
-			this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-			this.Name = "Form1";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Read Scan Image";
-			this.Load += new System.EventHandler(this.Form1_Load);
-			this.panel1.ResumeLayout(false);
-			this.panel1.PerformLayout();
-			this.panel2.ResumeLayout(false);
-			this.ResumeLayout(false);
-
+			AutoScaleDimensions = new SizeF(7F, 14F);
+			AutoScaleMode = AutoScaleMode.Font;
+			AutoSizeMode = AutoSizeMode.GrowAndShrink;
+			ClientSize = new Size(831, 558);
+			Controls.Add(panel2);
+			Controls.Add(panel1);
+			Font = new Font("Tahoma", 9F, FontStyle.Regular, GraphicsUnit.Point);
+			Icon = (Icon)resources.GetObject("$this.Icon");
+			Name = "Form1";
+			StartPosition = FormStartPosition.CenterScreen;
+			Text = "Read Scan Image";
+			Load += Form1_Load;
+			panel1.ResumeLayout(false);
+			panel1.PerformLayout();
+			panel7.ResumeLayout(false);
+			panel6.ResumeLayout(false);
+			panel6.PerformLayout();
+			panel5.ResumeLayout(false);
+			panel5.PerformLayout();
+			panel4.ResumeLayout(false);
+			panel4.PerformLayout();
+			panel3.ResumeLayout(false);
+			panel3.PerformLayout();
+			panel2.ResumeLayout(false);
+			ResumeLayout(false);
 		}
 
 		#endregion
 
 		private Panel panel1;
-		private Button btnChooseImage;
-		private Button btnCopyText;
 		private Panel panel2;
-		private Button btnClear;
 		private Button btnHistoryLog;
 		private ProgressBar pbLoading;
 		private RichTextBox rtbPlainText;
 		private ComboBox cbLanguages;
+		private Panel panel5;
+		private Panel panel4;
+		private Button btnCopyText;
+		private Panel panel3;
+		private Button btnChooseImage;
+		private Button btnClear;
+		private Panel panel7;
+		private Panel panel6;
 	}
 }

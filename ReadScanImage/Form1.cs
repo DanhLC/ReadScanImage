@@ -14,7 +14,7 @@ namespace ReadScanImage
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
-			var languages = new string[] { "English", "Vietnamese", "Japanese" };
+			var languages = new string[] { "English", "Japanese" };
 			cbLanguages.Items.AddRange(languages);
 			cbLanguages.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
 			cbLanguages.AutoCompleteSource = AutoCompleteSource.ListItems;
@@ -40,7 +40,7 @@ namespace ReadScanImage
 
 					pbLoading.Style = ProgressBarStyle.Marquee;
 					pbLoading.Visible = true;
-					rtbPlainText.Enabled = btnChooseImage.Enabled = btnClear.Enabled = btnCopyText.Enabled = btnHistoryLog.Enabled = cbLanguages.Enabled =  false;
+					rtbPlainText.Enabled = btnChooseImage.Enabled = btnClear.Enabled = btnCopyText.Enabled = btnHistoryLog.Enabled = cbLanguages.Enabled = false;
 
 					#endregion
 
@@ -68,8 +68,7 @@ namespace ReadScanImage
 				// Library: --https://tesseract-ocr.github.io/tessdoc/Data-Files, add more to tessdata
 				var tessdataPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "tessdata");
 				var language = cbLanguages.SelectedItem.ToString();
-				var selectedLanguage = language.ToLower() == "vietnamese" ? "vie"
-					: language.ToLower() == "english" ? "eng" : "jpn";
+				var selectedLanguage = language.ToLower() == "english" ? "eng" : "jpn";
 
 				var text = await Task.Run(() =>
 				{
@@ -89,7 +88,7 @@ namespace ReadScanImage
 								}
 								catch { }
 
-								return plainText; 
+								return plainText;
 							}
 						}
 					}
