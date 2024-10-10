@@ -1,10 +1,15 @@
-﻿namespace ReadScanImage
+﻿using System.Windows.Forms;
+
+namespace ReadScanImage
 {
 	public partial class TodayHistory : Form
 	{
+		private readonly ICGlobalService _service;
+
 		public TodayHistory()
 		{
 			InitializeComponent();
+			_service = new CGlobal();
 		}
 
 		private async void TodayHistory_Load(object sender, EventArgs e)
@@ -76,6 +81,41 @@
 				{
 					MessageBox.Show(ex.Message);
 				}
+			}
+		}
+
+		private async void btnExport_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				if (_service.IsEmptyString(rtbHistory.Text)) throw new Exception("No history available for export");
+
+				using (var saveFileDialog = new SaveFileDialog())
+				{
+					saveFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
+					saveFileDialog.DefaultExt = "txt";
+					saveFileDialog.AddExtension = true;
+					saveFileDialog.Title = "Choose location to export file";
+					saveFileDialog.FileName = string.Format("ExportedHistory_{0:ddMMyyyy}_{0:hhMMsss}.txt", DateTime.Now);
+
+					if (saveFileDialog.ShowDialog() == DialogResult.OK)
+					{
+						pbLoading.Style = ProgressBarStyle.Marquee;
+						pbLoading.Visible = true;
+						btnCopyText.Enabled = btnClear.Enabled = btnExport.Enabled = false;
+
+						await System.IO.File.WriteAllTextAsync(saveFileDialog.FileName, rtbHistory.Text);
+
+						pbLoading.Visible = false;
+						btnCopyText.Enabled = btnClear.Enabled = btnExport.Enabled = true;
+
+						MessageBox.Show("Export successfully!", "Notify", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Error reading log: " + ex.Message);
 			}
 		}
 	}

@@ -4,12 +4,12 @@ namespace ReadScanImage
 {
 	public partial class Form1 : Form
 	{
-		private readonly ICGlobalService _cglobalService;
+		private readonly ICGlobalService _service;
 
 		public Form1()
 		{
 			InitializeComponent();
-			_cglobalService = new CGlobal();
+			_service = new CGlobal();
 		}
 
 		private void Form1_Load(object sender, EventArgs e)
@@ -84,7 +84,7 @@ namespace ReadScanImage
 								{
 									var fileName = Path.GetFileName(imagePath);
 									var message = string.Format("Action: Extract text to image,{0}File name: {1},{0}Language: {2} ", Environment.NewLine, fileName, language);
-									_cglobalService.WriteHistoryLog("Log", "HistoryLog", message, plainText);
+									_service.WriteHistoryLog("Log", "HistoryLog", message, plainText);
 								}
 								catch
 								{
@@ -101,7 +101,7 @@ namespace ReadScanImage
 			}
 			catch (Exception ex)
 			{
-				_cglobalService.WriteErrorLog(ex);
+				_service.WriteErrorLog(ex);
 				MessageBox.Show(ex.Message);
 			}
 		}

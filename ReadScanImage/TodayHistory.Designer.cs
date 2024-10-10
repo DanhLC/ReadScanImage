@@ -30,13 +30,17 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TodayHistory));
 			panel1 = new Panel();
+			panel5 = new Panel();
+			btnExport = new Button();
 			panel4 = new Panel();
 			btnClear = new Button();
 			panel3 = new Panel();
 			btnCopyText = new Button();
 			panel2 = new Panel();
 			rtbHistory = new RichTextBox();
+			pbLoading = new ProgressBar();
 			panel1.SuspendLayout();
+			panel5.SuspendLayout();
 			panel4.SuspendLayout();
 			panel3.SuspendLayout();
 			panel2.SuspendLayout();
@@ -44,6 +48,8 @@
 			// 
 			// panel1
 			// 
+			panel1.Controls.Add(pbLoading);
+			panel1.Controls.Add(panel5);
 			panel1.Controls.Add(panel4);
 			panel1.Controls.Add(panel3);
 			panel1.Dock = DockStyle.Top;
@@ -51,6 +57,32 @@
 			panel1.Name = "panel1";
 			panel1.Size = new Size(800, 45);
 			panel1.TabIndex = 0;
+			// 
+			// panel5
+			// 
+			panel5.AutoSize = true;
+			panel5.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+			panel5.Controls.Add(btnExport);
+			panel5.Dock = DockStyle.Left;
+			panel5.Location = new Point(329, 0);
+			panel5.Name = "panel5";
+			panel5.Size = new Size(118, 45);
+			panel5.TabIndex = 6;
+			// 
+			// btnExport
+			// 
+			btnExport.AutoSize = true;
+			btnExport.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+			btnExport.BackColor = SystemColors.GradientInactiveCaption;
+			btnExport.FlatStyle = FlatStyle.Popup;
+			btnExport.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
+			btnExport.Location = new Point(6, 7);
+			btnExport.Name = "btnExport";
+			btnExport.Size = new Size(109, 32);
+			btnExport.TabIndex = 3;
+			btnExport.Text = "Export txt";
+			btnExport.UseVisualStyleBackColor = false;
+			btnExport.Click += btnExport_Click;
 			// 
 			// panel4
 			// 
@@ -123,6 +155,15 @@
 			rtbHistory.TabIndex = 0;
 			rtbHistory.Text = "";
 			// 
+			// pbLoading
+			// 
+			pbLoading.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+			pbLoading.Location = new Point(601, 12);
+			pbLoading.Name = "pbLoading";
+			pbLoading.Size = new Size(187, 23);
+			pbLoading.TabIndex = 7;
+			pbLoading.Visible = false;
+			// 
 			// TodayHistory
 			// 
 			AutoScaleDimensions = new SizeF(10F, 22F);
@@ -138,6 +179,8 @@
 			Load += TodayHistory_Load;
 			panel1.ResumeLayout(false);
 			panel1.PerformLayout();
+			panel5.ResumeLayout(false);
+			panel5.PerformLayout();
 			panel4.ResumeLayout(false);
 			panel4.PerformLayout();
 			panel3.ResumeLayout(false);
@@ -155,5 +198,8 @@
 		private RichTextBox rtbHistory;
 		private Panel panel4;
 		private Panel panel3;
+		private Panel panel5;
+		private Button btnExport;
+		private ProgressBar pbLoading;
 	}
 }

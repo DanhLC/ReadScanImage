@@ -21,7 +21,6 @@
 			catch { }
 		}
 
-
 		public void WriteErrorLog(Exception ex)
 		{
 			var errorLogFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ErrorLog");
@@ -41,6 +40,16 @@
 			}
 			catch
 			{
+			}
+		}
+
+		public bool IsEmptyString(string input)
+		{
+			try {
+				return string.IsNullOrWhiteSpace(input) && string.IsNullOrEmpty(input);
+			}
+			catch {
+				return false;
 			}
 		}
 	}
